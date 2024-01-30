@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Himangshu Mishra - Web Developer in West Bengal and Odisha. Graduate from Raajdhani Engineering College, Bhubaneswar. Founder of Sikly Developers Group, specializing in digital marketing, SEO, and web development services.">
+    <meta name="keywords"
+        content="Himangshu Mishra, web developer, West Bengal, Odisha, Raajdhani Engineering College Bhubaneswar, Sikly Developers Group, digital marketing, SEO, social media marketing, content creation, online presence">
+    <meta name="author" content="Himangshu Mishra">
+    <title>Himangshu Mishra | Sikly Developers Group</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        html,
+        body {
+            width: 100%;
+
+            overflow-x: hidden;
+        }
+
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4d6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        header nav a {
+            color: #ecf0f1;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #3498db;
+        }
+
+        #home {
+            background-color: #3498db;
+            color: #ecf0f1;
+        }
+   #loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #3498db;
+            color: #ecf0f1;
+        }
+
+        .loader-icon {
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-text {
+            margin-left: 8px;
+            font-size: 1.5rem;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+
+    <div id="loader">
+        <i class="fas fa-spinner fa-spin fa-3x loader-icon"></i>
+        <span class="loader-text">Loading...</span>
+    </div>
+
+    <div style="display:none;" id="contentContainer" class="w-full">
+
+        <header class="bg-blue-600 text-white">
+            <div id="bmnu"
+                class="container mx-auto items-center justify-between py-4 px-6 md:px-10 lg:px-16 animated fadeIn hidden md:flex">
+                <div class="text-2xl font-bold hidden md:block">Casydeal</div>
+                <nav class="hidden md:block">
+                    <ul id="nav-links" class="flex space-x-4">
+                        <li class="animate_animated animate_fadeIn"><a href="#home" class="hover:text-gray-300">Home</a>
+                        </li>
+                        <li class="animate_animated animate_fadeIn"><a href="#services"
+                                class="hover:text-gray-300">Services</a></li>
+                        <li class="animate_animated animate_fadeIn"><a href="#about"
+                                class="hover:text-gray-300">About</a></li>
+                        <li class="animate_animated animate_fadeIn"><a href="#contact"
+                                class="hover:text-gray-300">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        <!-- </header> -->
+
+        <div class="md:hidden bg-blue-600 text-white p-3 animate_animated animate_fadeIn">
+            <nav class="flex justify-between items-center">
+                <div class="text-2xl font-bold ">Casydeal</div>
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+
+        <nav id="mobile-menu" class="hidden">
+            <ul id="nav-links" class="flex flex-col space-y-4 p-3 bg-blue-600 text-white">
+                <li class="animate_animated animate_fadeIn"><a href="#home" class="hover:text-gray-300">Home</a></li>
+                <li class="animate_animated animate_fadeIn"><a href="#services" class="hover:text-gray-300">Services</a>
+                </li>
+                <li class="animate_animated animate_fadeIn"><a href="#about" class="hover:text-gray-300">About</a></li>
+                <li class="animate_animated animate_fadeIn"><a href="#contact" class="hover:text-gray-300">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        </header>
+
+        <section id="home" class="text-center py-16 bg-blue-700 shadow-xl m-3 text-white animated fadeInUp rounded-xl">
+            <h1 class="text-4xl font-bold mb-4" id="homeTexth1"></h1>
+            <p class="text-lg" id="homeTextPara"></p>
+        </section>
+
+        <section id="services" class="bg-gray-200 py-12 shadow-md m-3>
+            <div class=" container mx-auto bg-slate-400">
+            <h2 class="text-3xl font-bold mb-8 text-center">Our Services</h2>
+            <div class="flex flex-wrap mx-4 justify-center items-center">
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white p-6 rounded-md shadow-xl">
+                        <img src="https://source.unsplash.com/800x600/?seo" alt="SEO Image"
+                            class="w-full h-48 object-cover mb-4 rounded-md">
+                        <h3 class="text-xl font-bold mb-2">SEO Optimization</h3>
+                        <p class="text-gray-700">Improve your website's visibility on search engines with our effective
+                            SEO strategies.</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 ">
+                    <div class="bg-white p-6 rounded-md shadow-xl  ">
+                        <img src="https://source.unsplash.com/800x600/?social-media" alt="Social Media Marketing Image"
+                            class="w-full h-48 object-cover mb-4 rounded-md">
+                        <h3 class="text-xl font-bold mb-2">Social Media Marketing</h3>
+                        <p class="text-gray-700">Boost your online presence and engage with your audience through
+                            effective social media marketing.</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 animate_animated animate_fadeIn">
+                    <div class="bg-white p-6 rounded-md shadow-xl">
+                        <img src="https://source.unsplash.com/800x600/?content-marketing" alt="Content Marketing Image"
+                            class="w-full h-48 object-cover mb-4 rounded-md">
+                        <h3 class="text-xl font-bold mb-2">Content Marketing</h3>
+                        <p class="text-gray-700">Create valuable and relevant content to attract and engage your target
+                            audience.</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+    <section id="about" class="py-12 bg-gray-200 animated fadeIn shadow-md m-3">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">About Casydeal</h2>
+            <p id="aboutText" class="text-gray-700 mb-6"></p>
+            <div class="flex justify-center space-x-4 mt-6">
+                <a href="https://www.linkedin.com/in/himangshumishra" target="_blank"
+                    class="text-blue-600 hover:underline">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/himangshumishra" target="_blank" class="text-gray-800 hover:underline">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://www.facebook.com/mishra.himangshu" target="_blank"
+                    class="text-blue-700 hover:underline">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/mishra.himangshu" target="_blank"
+                    class="text-pink-600 hover:underline">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://twitter.com/himangshuji" target="_blank" class="text-blue-400 hover:underline">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-12 bg-gray-200 animated fadeIn shadow-md m-3">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
+            <p class="text-gray-700 mb-6">
+                For inquiries, feel free to reach out via email or WhatsApp.
+            </p>
+            <div class="flex justify-center space-x-4 mt-6">
+                <a href="mailto:sikly.dev@gmail.com" class="text-blue-600 hover:underline">
+                    <i class="fas fa-envelope fa-2x"></i> <!-- Use the appropriate icon class for email -->
+                    <span class="ml-2">sikly.dev@gmail.com</span> <!-- Replace with your email address -->
+                </a>
+                <a href="https://wa.me/+919593119009" class="text-green-500 hover:underline">
+                    <i class="fab fa-whatsapp fa-2x"></i> 
+                    <span class="ml-2">9593119009</span> 
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-600 text-white py-6 animated fadeIn">
+        <div class="container mx-auto text-center">
+            <p>&copy; <span id="currentYear"></span> <a href="https://sikly.in">Sikly Developers Group</a>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var homeTyped = new Typed('#homeTexth1', {
+            strings: ["Himangshu Mishra - Digital Marketing Specialist"],
+            typeSpeed: 30,
+            showCursor: false,
+        });
+        var homeTyped2 = new Typed('#homeTextPara', {
+            strings: ["Founder of Sikly Developers Group | Providing top-notch digital marketing, SEO, and web development services"],
+            typeSpeed: 10,
+            showCursor: false,
+        });
+
+        // About Section Typing Animation
+        var aboutTyped = new Typed('#aboutText', {
+            strings: ["Casydeal is a digital marketing service provider platform. Owned by Himangshu Mishra, a passionate web developer from West Bengal, currently studying at Raajdhani Engineering College in Bhubaneswar."],
+            typeSpeed: 30,
+            showCursor: false,
+        });
+
+
+        var typed = new Typed('#aboutText', {
+            strings: ["Casydeal is a digital marketing service provider platform. Owned by Himangshu Mishra, a passionate web developer from West Bengal, currently studying at Raajdhani Engineering College in Bhubaneswar."],
+            typeSpeed: 30,
+            showCursor: false,
+        });
+        document.getElementById("currentYear").innerText = new Date().getFullYear();
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("contentContainer").style.display = "block";
+        let bmnu=document.getElementById('bmnu')
+        
+        var mobileMenu = document.getElementById("mobile-menu");
+        
+        document.getElementById("mobile-menu-button").addEventListener("click", function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+    });
+</script>
+
+</body>
+
+</html>
