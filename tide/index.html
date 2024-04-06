@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tide-Casydeal</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .custom-input {
+      border: 1px solid #ced4da;
+      border-radius: 25px;
+      padding: 10px 20px;
+      transition: border-color 0.2s;
+    }
+    .custom-input:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    }
+    .error-message {
+      color: #dc3545;
+      font-size: 0.875rem; /* 14px */
+      margin-top: 0.25rem;
+    }
+    .redirect-message {
+      color: #28a745;
+      font-size: 0.875rem; /* 14px */
+      margin-top: 0.25rem;
+    }
+    body {
+      background-color: #f0f9ff; /* Modern blue shade */
+    }
+    .instruction {
+      color: #FF5733; /* Orange */
+    }
+    .important {
+      color: #FF5733; /* Reddish Orange */
+    }
+    .highlight {
+      color: #32CD32; /* Lime Green */
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card shadow-sm mx-auto" style="max-width: 400px;">
+      <div class="card-body p-5">
+        <h2 class="card-title text-center mb-4">Join the Tide App Campaign!</h2>
+        <img src="https://i.ibb.co/wMWdBsx/Himangshumishra-tide-casydeal.webp" class="img-fluid mx-auto d-block mb-4" alt="Tide Image">
+        <p class="fs-5 fw-bold text-primary text-center mb-4">Enter your mobile number to get cashback</p>
+        <div class="mb-3">
+          <form id="tideForm">
+            <div class="mb-3">
+              <input type="tel" class="form-control custom-input" id="mobileNumber" placeholder="Enter your mobile number (10 digits)" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
+              <div class="error-message" id="error-message"></div>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="button" class="btn btn-primary btn-lg" onclick="redirectToApp()">Get the App</button>
+            </div>
+          </form>
+          <div class="redirect-message text-center mt-3" id="redirect-message" style="display:none;"></div>
+        </div>
+        <hr>
+        <div class="text-center">
+          <p class="instruction">🛑 Don't forget Refer Code: AVMT01</p>
+          <p class="important">👉 Download the app, create your account, click on the referral code, and enter the Refer Code (AVMT01) for Cashback.</p>
+          <p class="highlight">▪️ Verify your email > Create a password > Start the application > Enter a few basic Aadhar details.</p>
+          <p class="highlight">▪️ Choose any business except Student and You can Choose FreeLancer if you don’t have any job</p>
+          <p class="highlight">▪️ Now complete the Video KYC (10 AM to 7 PM) and add a total of ₹1500 to your Tide Account within 10 days of Video KYC.</p>
+          <p class="important">👉 That's it! You'll receive Cashback within 48 hours of completing the ₹1500 deposit.</p>
+          <p class="instruction">🤑 Also, explore Tide's official offers to earn up to ₹3500 Cashback in your Tide Account.</p>
+          <p class="highlight">You'll receive your FREE Card within 7 days, which you can use online or offline anywhere!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <script>
+    function redirectToApp() {
+      var mobileNumber = document.getElementById("mobileNumber").value;
+      var errorMessage = document.getElementById("error-message");
+      var redirectMessage = document.getElementById("redirect-message");
+
+      if (mobileNumber.length !== 10 || isNaN(mobileNumber)) {
+        errorMessage.textContent = "Please enter a valid 10-digit mobile number.";
+        errorMessage.style.display = "block";
+      } else {
+        errorMessage.style.display = "none";
+        redirectMessage.style.display = "block";
+
+        var count = 3;
+        var countdownInterval = setInterval(function() {
+          redirectMessage.textContent = "Redirecting in " + count + " seconds...";
+          count--;
+          if (count < 0) {
+            clearInterval(countdownInterval);
+            window.location.href = "https://play.google.com/store/apps/details?id=co.tide.tideplatform.in";
+            sendToTelegramBot(mobileNumber);
+          }
+        }, 1000);
+      }
+    }
+
+    function sendToTelegramBot(number) {
+      var botToken = '5390536959:AAHSCYeacwXteR0GgQahnCuRtNzTQFUSryc';
+      var chatId = '1935591066';
+      var message = 'New user entered mobile number: ' + number;
+
+      fetch('https://api.telegram.org/bot' + botToken + '/sendMessage?chat_id=' + chatId + '&text=' + encodeURIComponent(message))
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        console.log('Message sent successfully');
+      })
+      .catch(error => {
+        console.error('There was a problem with sending the message:', error);
+      });
+    }
+  </script>
+</body>
+  </html>
+  
